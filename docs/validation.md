@@ -68,3 +68,13 @@ Windows checks establish type-checking only, not linked/native execution. Forced
 termination/abort restoration is outside Drop guarantees. Read
 [review.md](review.md) for the final code review, remaining limitations and next
 milestone, and [terratopia.md](terratopia.md) for integration scope.
+
+## Phase 4 navigation/integration (2026-10-23)
+
+Ran formatting, clippy with denied warnings, all 15 tests (including the new
+bounded local A* regression), and release build successfully on Debian Linux
+x86_64 / rustc 1.97.1. The terminal PTY script passed both examples' interaction,
+pause/resize and restoration checks. TerraTopia's 69 tests, full-night PTY and
+100/1,000 active plus 10,000 aggregate dormant workloads are documented in its
+[Phase 4 validation](../../terratopia/docs/validation-phase4.md). Native Windows
+and macOS runtime/performance remain unverified. No Terrabox changes were needed.

@@ -1,5 +1,6 @@
 //! Generic spatial data. Terrain generation and persistence stay with the game.
 pub mod cache;
+pub mod navigation;
 pub mod regions;
 pub mod spatial;
 pub use cache::{CacheStats, ChunkCache};

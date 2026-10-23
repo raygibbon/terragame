@@ -147,3 +147,13 @@ The engine intentionally stops short of world persistence, pathfinding, game
 components, jobs, colonies, economic history, travel, networking or scripting.
 The next step is gameplay-driven use and profiling at larger active populations,
 plus native terminal testing on the remaining portability targets.
+
+## TerraTopia Phase 4 integration
+
+The sibling game's ecosystem now uses generational entity lookup, spatial
+occupancy/nearby queries, multirate scheduling, active region keys and bounded
+FIFO gameplay events. Species, needs, feeding/hunting, births, dormant summaries
+and save migration remain game-owned. `terragame_world::navigation::local_path`
+adds deterministic bounded local A* with a caller-shared expansion budget.
+See [the integration report](docs/terratopia.md) and TerraTopia's
+[ecosystem architecture](../terratopia/docs/ecosystem.md).

@@ -38,3 +38,22 @@ oxygen, inventory, recipes, species, objectives and lore remain in TerraTopia.
 Both repositories use stable Rust 2024 and the same sibling Terrabox source.
 See [validation](validation.md) for the existing scanner/crafting/survival/save
 and timed full-night PTY acceptance results after integration.
+
+## Phase 4 integration (2026-10-23)
+
+TerraTopia now uses EntityStore, SpatialIndex, Scheduler, ActiveRegions and
+EventQueue in the wildlife lifecycle. Its dense records and persistent tuple IDs
+remain game-owned; the arena maps transient handles to dense indices. The engine
+adds only generic bounded local A*, covered by wall/dynamic-obstacle, budget and
+extreme-coordinate tests. Terrabox is unchanged.
+
+The game implements needs/states, foraging, predator/prey combat, scavenging,
+births/deaths, coarse dormant counts, schema-3 saves with version-1/2 migration,
+and terminal inspection/warnings. See its [architecture](../../terratopia/docs/ecosystem.md),
+[performance](../../terratopia/docs/performance-phase4.md) and
+[validation](../../terratopia/docs/validation-phase4.md).
+
+Five measured release runs: 1,000 active records across 130 regions had a median
+2.2940 ms mean fixed tick and 9.9489 ms p95; 10,000 represented dormant animals
+across 500 summaries took 1.465 ms for 24,000 ticks with zero individual AI
+updates. These are game-specific host measurements, not engine guarantees.

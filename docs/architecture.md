@@ -127,3 +127,21 @@ a persistence design and coarse summaries, not millions of active Rust entities.
 No speculative civilisation, economy, job graph, networking or script framework
 has been introduced. Public APIs are a small 0.1 foundation and can evolve after
 real games demonstrate their next requirements.
+
+## Bounded local navigation and game identity
+
+`navigation::local_path` performs cardinal deterministic A* inside a caller's
+Manhattan radius and decrements a caller-owned expansion budget. It returns a
+small path and expansion count; exhausted/unreachable searches return an empty
+path. Stable coordinate ties and checked Point offsets preserve repeatability at
+world edges. Callers decide traversability, occupancy, per-request limits and
+how to share the budget across creatures. No persistent path cache is introduced;
+new requests see current obstacles. The engine has no species, food, combat,
+population or planetary navigation rules.
+
+TerraTopia preserves its existing ID-sorted dense creature records. An
+EntityStore<usize> supplies transient handle-to-dense-index lookup, and the
+SpatialIndex resolves occupied/nearby living creatures. Persistent tuple IDs,
+needs and dormant demographic summaries are game-owned; engine handles never
+enter saves. Scheduler and ActiveRegions supply bounded dispatch/region keys;
+EventQueue carries committed game facts with observable backpressure.

@@ -437,3 +437,42 @@ fn quit_binding_accepts_decoded_control_letters_and_ignores_alt() {
         modifiers: Modifiers::ALT
     }));
 }
+
+#[test]
+fn bounded_local_astar_avoids_walls_and_invalidates_on_environment_change() {
+    use terragame_world::{Point, navigation::local_path};
+    let (start, goal) = (Point::new(0, 0), Point::new(4, 0));
+    let mut budget = 128;
+    let path = local_path(start, goal, 8, &mut budget, |p| p.x != 2 || p.y == 2);
+    assert_eq!(path.steps.last(), Some(&goal));
+    assert!(path.steps.contains(&Point::new(2, 2)));
+    assert!(path.expanded <= 128);
+    assert_eq!(budget + path.expanded, 128);
+    let mut budget = 2;
+    assert!(
+        local_path(start, goal, 8, &mut budget, |_| true)
+            .steps
+            .is_empty()
+    );
+    assert_eq!(budget, 0);
+    let mut budget = 128;
+    assert!(
+        local_path(start, goal, 8, &mut budget, |p| p.x != 2)
+            .steps
+            .is_empty()
+    );
+    let mut budget = 64;
+    let edge = Point::new(i64::MAX, i64::MIN);
+    assert_eq!(
+        local_path(
+            edge,
+            Point::new(i64::MAX - 1, i64::MIN),
+            2,
+            &mut budget,
+            |_| true
+        )
+        .steps
+        .len(),
+        1
+    );
+}
