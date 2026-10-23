@@ -1,0 +1,14 @@
+[workspace]
+members = ["crates/terragame-core", "crates/terragame-world", "crates/terragame-terminal"]
+resolver = "3"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+
+[workspace.dependencies]
+terragame-core = { path = "crates/terragame-core" }
+terragame-world = { path = "crates/terragame-world" }
+terragame-terminal = { path = "crates/terragame-terminal" }
+terrabox = { path = "../terrabox/crates/terrabox" }

@@ -1,0 +1,6 @@
+[package]
+name = "terragame-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Deterministic scheduling and generational storage for terminal simulations"

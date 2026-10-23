@@ -1,0 +1,95 @@
+{
+  "date": "2026-10-23",
+  "host": "Linux-7.2.6+deb13-amd64-x86_64-with-glibc2.41",
+  "rustc": "rustc 1.97.1 (8bab26f4f 2026-07-14)",
+  "units": "milliseconds",
+  "samples": [
+    {
+      "entity churn": 2.403417,
+      "entity iteration": 2.944116,
+      "spatial radius": 116.868989,
+      "spatial rectangle": 91.961998,
+      "spatial movement": 83.686622,
+      "cache misses": 7.824712,
+      "cache hits": 80.080957,
+      "scheduler": 18.922754,
+      "fixed step": 29.782816,
+      "tile composition": 311.242859,
+      "camera redraw": 387.031146
+    },
+    {
+      "entity churn": 1.861401,
+      "entity iteration": 1.721448,
+      "spatial radius": 114.323772,
+      "spatial rectangle": 94.729463,
+      "spatial movement": 92.918138,
+      "cache misses": 8.796425,
+      "cache hits": 79.37661,
+      "scheduler": 21.489064,
+      "fixed step": 28.803866,
+      "tile composition": 270.481484,
+      "camera redraw": 305.142416
+    },
+    {
+      "entity churn": 1.460415,
+      "entity iteration": 1.392795,
+      "spatial radius": 89.650404,
+      "spatial rectangle": 91.171314,
+      "spatial movement": 84.636297,
+      "cache misses": 8.2574,
+      "cache hits": 77.189627,
+      "scheduler": 19.971038,
+      "fixed step": 25.998608,
+      "tile composition": 258.473154,
+      "camera redraw": 281.954943
+    },
+    {
+      "entity churn": 1.196608,
+      "entity iteration": 1.434212,
+      "spatial radius": 85.252492,
+      "spatial rectangle": 89.318763,
+      "spatial movement": 83.974387,
+      "cache misses": 7.962537,
+      "cache hits": 82.394418,
+      "scheduler": 19.323156,
+      "fixed step": 25.12961,
+      "tile composition": 264.572172,
+      "camera redraw": 299.319681
+    },
+    {
+      "entity churn": 1.413721,
+      "entity iteration": 1.224569,
+      "spatial radius": 90.228203,
+      "spatial rectangle": 91.755126,
+      "spatial movement": 77.108942,
+      "cache misses": 7.298246,
+      "cache hits": 80.975636,
+      "scheduler": 19.047796,
+      "fixed step": 24.61754,
+      "tile composition": 248.471652,
+      "camera redraw": 277.539637
+    }
+  ],
+  "memory_samples": [
+    {
+      "VmHWM": 10576,
+      "VmRSS": 10576
+    },
+    {
+      "VmHWM": 10588,
+      "VmRSS": 10588
+    },
+    {
+      "VmHWM": 10472,
+      "VmRSS": 10472
+    },
+    {
+      "VmHWM": 10572,
+      "VmRSS": 10572
+    },
+    {
+      "VmHWM": 10468,
+      "VmRSS": 10468
+    }
+  ]
+}

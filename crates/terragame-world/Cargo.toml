@@ -1,0 +1,9 @@
+[package]
+name = "terragame-world"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Signed spatial indexing, bounded chunks and region activation"
+
+[dependencies]
+terragame-core.workspace = true

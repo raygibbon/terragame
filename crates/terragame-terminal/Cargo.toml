@@ -1,0 +1,27 @@
+[package]
+name = "terragame-terminal"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Terminal game cameras, layers and lifecycle using Terrabox"
+
+[dependencies]
+terragame-core.workspace = true
+terragame-world.workspace = true
+terrabox.workspace = true
+
+[[example]]
+name = "terrasnake"
+path = "../../examples/terrasnake.rs"
+
+[[example]]
+name = "sandbox"
+path = "../../examples/sandbox.rs"
+
+[[example]]
+name = "benchmark"
+path = "../../examples/benchmark.rs"
+
+[[test]]
+name = "engine"
+path = "../../tests/engine.rs"
